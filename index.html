@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⚡ URL Control Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg: #0a0f1c;
+  --card: #111827;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --accent: #38bdf8;
+  --green: #22c55e;
+  --red: #ef4444;
+}
+
+/* BASE */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color: var(--text);
+}
+
+/* HEADER */
+header {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+/* SEARCH */
+input {
+  margin-top: 12px;
+  padding: 10px 14px;
+  width: 260px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #020617;
+  color: white;
+}
+
+/* GRID */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(17,24,39,0.8);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+/* TITLE */
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* SECTION */
+.section {
+  margin-top: 10px;
+}
+
+.section h4 {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+/* BUTTON LINK */
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text);
+  background: #020617;
+  border: 1px solid transparent;
+  transition: 0.25s;
+}
+
+.link:hover {
+  border-color: var(--accent);
+  background: #020617;
+}
+
+/* STATUS DOT */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* ACTIVE */
+.active {
+  border: 1px solid rgba(56,189,248,0.3);
+  box-shadow: 0 0 8px rgba(56,189,248,0.3);
+}
+
+/* DISABLED */
+.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  border: 1px dashed #374151;
+}
+
+/* GREEN DOT */
+.ok { background: var(--green); box-shadow: 0 0 6px var(--green); }
+
+/* RED DOT */
+.bad { background: var(--red); }
+
+/* SPECIAL CARDS */
+.highlight {
+  border: 1px solid rgba(34,197,94,0.4);
+  box-shadow: 0 0 15px rgba(34,197,94,0.2);
+}
+
+.highlight-blue {
+  border: 1px solid rgba(56,189,248,0.4);
+  box-shadow: 0 0 15px rgba(56,189,248,0.2);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>⚡ URL Control Center</h1>
+  <input type="text" id="search" placeholder="Search..." onkeyup="filterCards()">
+</header>
+
+<div class="container" id="cards">
+
+<!-- INDIA -->
+<div class="card">
+  <div class="title">🇮🇳 B2E INDIA</div>
+
+  <div class="section">
+    <h4>Portal</h4>
+    <a class="link" href="https://b2eglobal.benzyinfotech.com/login">Test</a>
+    <a class="link" href="https://b2ebeta.akbarcorporate.com/login">Beta</a>
+    <a class="link" href="https://corpnew.akbarcorporate.com/operatorlogin">Preprod</a>
+    <a class="link" href="https://www.akbarcorporate.com/login">Live</a>
+  </div>
+
+  <div class="section">
+    <h4>Admin</h4>
+    <a class="link" href="#">Test</a>
+    <a class="link" href="https://b2ebetaadmin.akbarcorporate.com/">Beta</a>
+    <a class="link" href="#">Preprod</a>
+    <a class="link" href="https://admin.akbarcorporate.com/">Live</a>
+  </div>
+</div>
+
+<!-- UAE -->
+<div class="card">
+  <div class="title">🇦🇪 B2E UAE</div>
+
+  <div class="section">
+    <h4>Portal</h4>
+    <a class="link" href="#">Test</a>
+    <a class="link" href="https://aecorpbeta.akbartravels.com/login">Beta</a>
+    <a class="link" href="https://aecorpnew.akbartravels.com/operatorlogin">Preprod</a>
+    <a class="link" href="https://uaecorp.akbartravels.com/login">Live</a>
+  </div>
+
+  <div class="section">
+    <h4>Admin</h4>
+    <a class="link" href="#">Test</a>
+    <a class="link" href="https://aecorpadminbeta.akbartravels.com/">Beta</a>
+    <a class="link" href="#">Preprod</a>
+    <a class="link" href="https://aecorpadmin.akbartravels.com/">Live</a>
+  </div>
+</div>
+
+<!-- KSA -->
+<div class="card">
+  <div class="title">🇸🇦 B2E KSA</div>
+
+  <div class="section">
+    <h4>Portal</h4>
+    <a class="link" href="#">Test</a>
+    <a class="link" href="https://sacorpbeta.akbartravels.com/login">Beta</a>
+    <a class="link" href="https://sacorpnew.akbartravels.com/operatorlogin">Preprod</a>
+    <a class="link" href="https://sacorp.akbartravels.com/login">Live</a>
+  </div>
+
+  <div class="section">
+    <h4>Admin</h4>
+    <a class="link" href="#">Test</a>
+    <a class="link" href="https://sacorpadminbeta.akbartravels.com/">Beta</a>
+    <a class="link" href="#">Preprod</a>
+    <a class="link" href="https://sacorpadmin.akbartravels.com/">Live</a>
+  </div>
+</div>
+
+<!-- IBOSS -->
+<div class="card highlight">
+  <div class="title">🧠 IBOSS</div>
+  <a class="link" href="https://bi.ibossonline.com/iboss/index.html">Dashboard</a>
+</div>
+
+<!-- CONNECTOR ADMIN -->
+<div class="card highlight-blue">
+  <div class="title">🔗 Connector Admin</div>
+  <a class="link" href="https://connectoradmin.akbartravelsonline.com/">Open Panel</a>
+</div>
+
+<!-- JIRA -->
+<div class="card">
+  <div class="title">📋 JIRA</div>
+  <a class="link" href="https://benzyinfotech.atlassian.net/jira/for-you">Open</a>
+</div>
+
+</div>
+
+<footer>
+⚡ Clean • Professional • Fast
+</footer>
+
+<script>
+function filterCards() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.getElementsByClassName("card");
+
+  for (let i = 0; i < cards.length; i++) {
+    let text = cards[i].innerText.toLowerCase();
+    cards[i].style.display = text.includes(input) ? "" : "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  let links = document.querySelectorAll("a");
+
+  links.forEach(link => {
+    let url = link.getAttribute("href");
+
+    // ✅ OPEN IN NEW TAB
+    if (url && url !== "#") {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+
+    // EXISTING STATUS LOGIC
+    let dot = document.createElement("span");
+    dot.classList.add("dot");
+
+    if (!url || url === "#") {
+      link.classList.add("disabled");
+      dot.classList.add("bad");
+    } else {
+      link.classList.add("active");
+      dot.classList.add("ok");
+    }
+
+    link.appendChild(dot);
+  });
+});
+</script>
+</body>
+</html>
+```
